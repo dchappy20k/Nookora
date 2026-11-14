@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="auto">
+  <defs>
+    <linearGradient id="canvasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111714" />
+      <stop offset="50%" stop-color="#18211C" />
+      <stop offset="100%" stop-color="#0e1310" />
+    </linearGradient>
+    <radialGradient id="bloomGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#D8C19A" stop-opacity="0.14" />
+      <stop offset="60%" stop-color="#B89565" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#111714" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" fill="url(#canvasGrad)" />
+  <rect width="1200" height="420" fill="url(#bloomGlow)" />
+
+  <!-- Architectural Hairline Grid -->
+  <line x1="80" y1="40" x2="1120" y2="40" stroke="#D8C19A" stroke-opacity="0.14" stroke-width="1" />
+  <line x1="80" y1="380" x2="1120" y2="380" stroke="#D8C19A" stroke-opacity="0.14" stroke-width="1" />
+  <line x1="80" y1="40" x2="80" y2="380" stroke="#D8C19A" stroke-opacity="0.14" stroke-width="1" />
+  <line x1="1120" y1="40" x2="1120" y2="380" stroke="#D8C19A" stroke-opacity="0.14" stroke-width="1" />
+
+  <!-- Subtle Corner Joinery Accents -->
+  <rect x="76" y="36" width="8" height="8" fill="#D8C19A" fill-opacity="0.4" />
+  <rect x="1116" y="36" width="8" height="8" fill="#D8C19A" fill-opacity="0.4" />
+  <rect x="76" y="376" width="8" height="8" fill="#D8C19A" fill-opacity="0.4" />
+  <rect x="1116" y="376" width="8" height="8" fill="#D8C19A" fill-opacity="0.4" />
+
+  <!-- Pill Tag / Category -->
+  <g transform="translate(600, 110)">
+    <rect x="-140" y="-16" width="280" height="32" rx="4" fill="#202A24" stroke="#D8C19A" stroke-opacity="0.3" stroke-width="1" />
+    <text text-anchor="middle" y="5" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="3" fill="#D8C19A">
+      THE NOCTURNE ATELIER PLATFORM
+    </text>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="600" y="210" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="64" font-weight="500" letter-spacing="12" fill="#F2EFE7">
+    NOOKORA
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="260" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="300" letter-spacing="6" fill="#D8C19A">
+    MAKE SPACE YOURS.
+  </text>
+
+  <!-- Manifesto Subtitle -->
+  <text x="600" y="310" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="400" fill="#C0BBAF" letter-spacing="1">
+    Discover compact rooms • Inspect exact line-item budgets in ₹ INR • Recreate with 100% drill-free pieces
+  </text>
+</svg>

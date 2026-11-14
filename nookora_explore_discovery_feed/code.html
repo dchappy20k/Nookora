@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NOOKORA — Find Your Kind of Space | Explore &amp; Discovery Hub</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111714",
+            "inverse-surface": "#dee4df",
+            "surface-bright": "#343b37",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "primary": "#f5ddb4",
+            "tertiary-fixed-dim": "#bdcbb1",
+            "on-secondary": "#432c05",
+            "on-secondary-fixed-variant": "#5c421a",
+            "surface-container": "#18211c",
+            "background": "#111714",
+            "on-tertiary": "#283421",
+            "primary-container": "#d8c19a",
+            "surface-container-lowest": "#0b0f0d",
+            "tertiary": "#d7e4c9",
+            "surface-tint": "#dbc49c",
+            "surface-container-highest": "#303633",
+            "inverse-primary": "#6d5c3c",
+            "on-tertiary-fixed": "#141e0e",
+            "secondary": "#e7c08d",
+            "secondary-fixed": "#ffddb2",
+            "on-secondary-fixed": "#291800",
+            "error": "#ffb4ab",
+            "surface-dim": "#111714",
+            "secondary-fixed-dim": "#e7c08d",
+            "primary-fixed": "#f8dfb7",
+            "tertiary-fixed": "#d9e7cc",
+            "on-primary": "#3c2e12",
+            "on-primary-container": "#5f4e30",
+            "error-container": "#93000a",
+            "on-primary-fixed-variant": "#544527",
+            "outline": "#898c83",
+            "primary-fixed-dim": "#dbc49c",
+            "surface-variant": "#252f29",
+            "surface-container-high": "#202a24",
+            "on-surface-variant": "#cfc5b8",
+            "inverse-on-surface": "#2c322e",
+            "on-primary-fixed": "#261a02",
+            "outline-variant": "#4c463c",
+            "secondary-container": "#5f441c",
+            "on-surface": "#dee4df",
+            "on-tertiary-container": "#485440",
+            "on-secondary-container": "#d8b280",
+            "on-tertiary-fixed-variant": "#3e4a37",
+            "on-background": "#dee4df",
+            "tertiary-container": "#bbc8ae",
+            "surface-container-low": "#141b17"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin": "3.5rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.75rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "label-sm": ["Inter"],
+            "headline-sm": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .ghost-border {
+      border: 1px solid rgba(216, 193, 154, 0.14);
+    }
+    .ghost-border-b {
+      border-bottom: 1px solid rgba(216, 193, 154, 0.14);
+    }
+    .ghost-border-t {
+      border-top: 1px solid rgba(216, 193, 154, 0.14);
+    }
+    .card-border {
+      border: 1px solid rgba(216, 193, 154, 0.12);
+    }
+    .ambient-shadow {
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), 0 4px 16px -2px rgba(0, 0, 0, 0.4);
+    }
+    /* Hide scrollbars for clean filter trays */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#111714] text-on-surface antialiased font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- ================= TOP APP BAR (SHARED COMPONENT) ================= -->
+<header class="sticky top-0 z-40 bg-[#111714]/95 backdrop-blur-md ghost-border-b">
+<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between h-20">
+<!-- Brand Logo Anchor -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-3 group" href="#">
+<img alt="NOOKORA Brand Logo" class="h-10 w-10 object-contain rounded-lg transition-transform duration-200 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKNl0kf72Eq-FY3-Zo4wZEdwiFA7Uyita1-3J1F7zzDkw3X6gwxoh0FvMhVWbg91TpN07KW-NzWEu1_tLje-gPEEz58O2jV8jQru0CgmB70N5J4M_KNx2LFejfwC_UT5vOzZ4F_OiZuHvqDoHnhTU-587dnRNsy8O_PErdfvfmi9nZlVrgcRSC__MuGPPvCN4rjedCheA6kfTtiQGcT7KRHlg-Pcq6e_u8APdHeAw"/>
+<span class="font-headline-md text-headline-md tracking-tight font-medium text-primary">NOOKORA</span>
+</a>
+<span class="hidden lg:inline-block text-label-sm font-label-sm uppercase tracking-widest text-outline ml-2 border-l border-[#d8c19a]/20 pl-3">Space Finder</span>
+</div>
+<!-- Navigation Links (Explore is Active) -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-semibold text-label-md font-label-md transition-all duration-200" href="#">Explore</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Room Ideas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Creators</a>
+</nav>
+<!-- Trailing Primary Action & Icon Actions -->
+<div class="flex items-center space-x-4">
+<button aria-label="Search" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+<button aria-label="Account" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-[22px]">account_circle</span>
+</button>
+<a class="hidden sm:inline-flex items-center justify-center bg-primary-container text-on-primary font-semibold hover:bg-primary transition-all duration-200 active:scale-95 text-label-md font-label-md px-5 h-10 rounded-lg shadow-sm" href="#upload">
+          Upload Your Room
+        </a>
+</div>
+</div>
+</header>
+<!-- ================= SUB-HERO EDITORIAL HEADER ================= -->
+<section class="bg-[#141b17] ghost-border-b pt-10 pb-8">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-semibold">Indian Renter &amp; Student Collective</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-3">
+          Find Your Kind of Space
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Real, achievable room transformations across India with itemized budget breakdowns, zero-drill DIY solutions, and direct product sourcing.
+        </p>
+</div>
+</div>
+</section>
+<!-- ================= SEARCH & MULTI-DIMENSIONAL FILTER SYSTEM ================= -->
+<section class="sticky top-20 z-30 bg-[#111714]/95 backdrop-blur-md ghost-border-b py-4">
+<div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin space-y-3">
+<!-- Primary Search Input & Sort Control -->
+<div class="flex flex-col md:flex-row items-stretch gap-3">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-11 pr-4 bg-[#252f29] card-border rounded-lg text-body-md font-body-md text-primary placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary-container focus:border-primary-container transition-all" placeholder="Search by room type, budget (e.g. under ₹5000), city, or aesthetic..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-label-sm px-2 py-0.5 rounded bg-[#18211c] text-on-surface-variant ghost-border">⌘K</span>
+</div>
+<!-- Sort Select & Filter Drawer Trigger -->
+<div class="flex items-center gap-2">
+<div class="relative">
+<select class="appearance-none h-11 pl-4 pr-9 bg-[#252f29] card-border rounded-lg text-label-md font-label-md text-primary cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option>Sort: Most Popular</option>
+<option>Sort: Lowest Budget First</option>
+<option>Sort: Newest Transformations</option>
+<option>Sort: Verified Recreations</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<button class="h-11 px-4 flex items-center gap-2 bg-[#252f29] hover:bg-[#202a24] card-border rounded-lg text-label-md font-label-md text-primary transition-all active:scale-95" id="drawerToggle">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="hidden sm:inline">Filters</span>
+<span class="w-5 h-5 rounded-full bg-secondary-container text-primary text-[10px] font-bold flex items-center justify-center border border-[#d8c19a]/40">3</span>
+</button>
+</div>
+</div>
+<!-- Quick Dimension Filter Tray -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 pt-1 text-label-sm font-label-sm">
+<!-- Budget Filter -->
+<div class="flex items-center gap-1.5 shrink-0 bg-[#252f29]/70 card-border px-2 py-1 rounded-lg">
+<span class="text-outline uppercase tracking-wider text-[10px] font-bold">Budget:</span>
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-semibold shadow-xs">Any</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-primary transition-colors">Under ₹2,000</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-primary transition-colors">₹2k - ₹5k</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-primary transition-colors">₹5k - ₹10k</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-primary transition-colors">₹10k+</button>
+</div>
+<div class="h-5 w-[1px] bg-[#d8c19a]/20 shrink-0"></div>
+<!-- Space Type Chips -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-[#252f29] card-border text-on-surface-variant font-medium hover:bg-[#202a24] hover:text-primary transition-colors">PG Room</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-semibold border border-primary">University Hostel</button>
+<button class="px-3 py-1.5 rounded-lg bg-[#252f29] card-border text-on-surface-variant font-medium hover:bg-[#202a24] hover:text-primary transition-colors">1BHK Rental</button>
+<button class="px-3 py-1.5 rounded-lg bg-[#252f29] card-border text-on-surface-variant font-medium hover:bg-[#202a24] hover:text-primary transition-colors">Studio</button>
+<button class="px-3 py-1.5 rounded-lg bg-[#252f29] card-border text-on-surface-variant font-medium hover:bg-[#202a24] hover:text-primary transition-colors">WFH Nook</button>
+</div>
+<div class="h-5 w-[1px] bg-[#d8c19a]/20 shrink-0"></div>
+<!-- Rental Restrictions -->
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-[#5f441c]/40 border border-[#d8c19a]/50 text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+            100% No-Drill Only
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-[#252f29] card-border text-on-surface-variant hover:text-primary hover:bg-[#202a24] transition-colors">Landlord-Friendly</button>
+<button class="px-3 py-1.5 rounded-lg bg-[#252f29] card-border text-on-surface-variant hover:text-primary hover:bg-[#202a24] transition-colors">Tiny Footprint (&lt;120 sq ft)</button>
+</div>
+</div>
+<!-- Active Filter Summary & Result Count -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2 text-body-sm font-body-sm">
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-on-surface-variant font-medium">Active filters:</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#252f29] text-primary border border-[#b89565]/40 text-label-sm font-label-sm">
+            Space: University Hostel
+            <button class="hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#252f29] text-primary border border-[#b89565]/40 text-label-sm font-label-sm">
+            Strict: 100% No-Drill Only
+            <button class="hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#252f29] text-primary border border-[#b89565]/40 text-label-sm font-label-sm">
+            Aesthetic: Japandi + Korean Minimal
+            <button class="hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<button class="text-secondary font-label-sm text-label-sm underline hover:text-primary transition-colors ml-1">Reset all</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-medium text-label-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span>Showing <strong class="text-primary font-bold">148</strong> achievable transformations in India</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-8 space-y-12">
+<!-- EDITORIAL FEATURED SPOTLIGHT BANNER -->
+<section class="bg-[#18211c] card-border rounded-xl p-6 md:p-8 ambient-shadow relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left: Text Editorial Story -->
+<div class="lg:col-span-5 space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5f441c]/50 text-secondary border border-[#d8c19a]/40 text-label-sm font-label-sm font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[14px] text-secondary">auto_awesome</span>
+            Budget Makeover of the Week
+          </div>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight leading-tight">
+            North Campus DU Hostel Room Made Serene for ₹3,890
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Aarav took a bleak 9x9 concrete hostel box with strict zero-nail policies and converted it into a calm, sun-drenched Korean minimal sanctuary using tension rods, washi paper lanterns, and upcycled crate shelving.
+          </p>
+<!-- Metric Badges -->
+<div class="grid grid-cols-3 gap-3 py-3 border-y border-[#d8c19a]/15">
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase">Total Cost</span>
+<span class="text-title-md font-title-md text-secondary font-bold">₹3,890</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase">Space Size</span>
+<span class="text-title-md font-title-md text-on-surface font-semibold">81 sq ft</span>
+</div>
+<div>
+<span class="block text-label-sm font-label-sm text-outline uppercase">Wall Holes</span>
+<span class="text-title-md font-title-md text-on-surface font-semibold">0 (Zero)</span>
+</div>
+</div>
+<!-- Creator & Action CTA -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#252f29] text-primary border border-[#d8c19a]/30 flex items-center justify-center font-bold text-label-md">
+                AD
+              </div>
+<div>
+<p class="text-body-sm font-body-sm font-semibold text-primary">@aarav_designs</p>
+<p class="text-label-sm font-label-sm text-outline">Delhi University • Verified Build</p>
+</div>
+</div>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg text-label-md font-label-md transition-all active:scale-95 flex items-center gap-2 shadow-sm">
+<span>View Breakdown</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right: Before / After Interactive Visual Spread -->
+<div class="lg:col-span-7 relative group rounded-lg overflow-hidden card-border bg-[#111714]">
+<div class="relative h-[380px] md:h-[440px] w-full overflow-hidden">
+<!-- Transformation Room Image -->
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A tranquil, minimalist student hostel room makeover in Delhi featuring warm natural light, cream linen bedding, a no-drill tension rod corner shelf holding ceramic mugs, a soft paper rice lantern casting warm amber tones, and light wood textures against off-white walls. Architectural monograph aesthetic, light mode, peaceful Japandi mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEoPUPYqemEf1N6Ab-kTqY98l0Uwb4mWto6HPITFPqfPToc0PeZPUXLzqz0bcVWGqiNGSp5LBGt4mdKTl4g2y4R3x-Fy-bKZL4sy6e7P67RFE6Ud02ovaZ7Y0VVFbAtJKOP36lTOBkzEMNRXgxx4x3fnMDfWigUKIzwXhy5Gbhpo7ktXTm8ovFAl5yaDlviSc47OqGacSyBKb9KIEv8vFz0gI6saGE29y7C1lt3JI"/>
+<!-- Floating Hotspot Pins -->
+<div class="absolute top-1/3 left-1/4 group/pin">
+<button class="w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/50 flex items-center justify-center text-primary shadow-lg hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</button>
+<div class="hidden group-hover/pin:flex absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-[#18211c] p-2.5 rounded-lg border border-[#d8c19a]/30 ambient-shadow flex-col gap-1 z-20">
+<span class="text-label-sm font-label-sm text-outline uppercase">Shoppable Item</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary">Washi Rice Pendant Lamp</span>
+<span class="text-label-md font-label-md text-secondary font-bold">₹649 on UrbanMalka</span>
+</div>
+</div>
+<div class="absolute bottom-1/4 right-1/3 group/pin2">
+<button class="w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/50 flex items-center justify-center text-primary shadow-lg hover:scale-110 transition-transform">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</button>
+<div class="hidden group-hover/pin2:flex absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 bg-[#18211c] p-2.5 rounded-lg border border-[#d8c19a]/30 ambient-shadow flex-col gap-1 z-20">
+<span class="text-label-sm font-label-sm text-outline uppercase">DIY Hack</span>
+<span class="text-body-sm font-body-sm font-semibold text-primary">No-Drill Fluted Pegboard Unit</span>
+<span class="text-label-md font-label-md text-secondary font-bold">₹820 Total Cost</span>
+</div>
+</div>
+<!-- Before/After Pill Indicator -->
+<div class="absolute bottom-4 left-4 bg-[#111714]/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#d8c19a]/30 flex items-center gap-2 text-label-sm font-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px] text-secondary">compare</span>
+<span>Hover image to inspect details</span>
+</div>
+<!-- Shoppable Items Badge -->
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary px-3 py-1 rounded-md text-label-sm font-label-sm font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">shopping_bag</span>
+<span>7 Shoppable Products</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= DYNAMIC MASONRY TRANSFORMATION GRID ================= -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Recent Community Transformations</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Real rooms engineered by tenants within tight constraints.</p>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<button class="p-2 rounded bg-[#202a24] text-primary card-border" title="Grid View">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="p-2 rounded bg-[#18211c] text-outline hover:text-primary card-border transition-colors" title="Compact View">
+<span class="material-symbols-outlined text-[20px]">view_agenda</span>
+</button>
+</div>
+</div>
+<!-- Masonry Grid Columns (3 Column Desktop) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+<!-- CARD 1: Koramangala 1BHK / Japandi -->
+<article class="bg-[#252f29] card-border rounded-xl overflow-hidden hover:bg-[#202a24] transition-all duration-300 ambient-shadow group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A Japandi styled bedroom corner in a Koramangala Bangalore apartment featuring low platform pine bed, neutral warm beige linen duvet, jute circular rug, and ceramic vase with dried bunny tails. Soft natural morning lighting creating a serene zen living mood with ivory walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIHznZHyh1dVplXXKm5SQ1FmNYZ_4mRIwmEe9OReyTs_ePozDb2UdUgrIgSkWie0qONZvdwvM_wqGkxw2-_skO8Ul06N9l5bpoE6p8ryo3EIYIJSRUaF-OOTxfVUR8TDczn_1du8ryrdDWpEv2KA4L-tlJ3YTM49ieaiAWYsuQC4oT53mi1-SVRPfnrnoEQYbPsisb5E5lSxM0_SP4JmoSGBRLbNt6si3UxvHg7sM"/>
+<div class="absolute top-3 left-3 bg-[#111714]/85 backdrop-blur-md px-2.5 py-1 rounded text-label-sm font-label-sm text-primary border border-[#d8c19a]/30 font-semibold">
+              Japandi
+            </div>
+<button aria-label="Save Room" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/30 flex items-center justify-center text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-[#5f441c] text-primary px-2.5 py-1 rounded text-label-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-[#d8c19a]/40">
+<span>Makeover: ₹6,450</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-[#111714]/85 backdrop-blur-md text-on-surface px-2 py-0.5 rounded text-label-sm font-label-sm border border-[#d8c19a]/30">
+              8 Products
+            </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Koramangala, Bangalore</span>
+<span class="text-secondary font-medium">100% No-Drill</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-semibold leading-snug group-hover:text-secondary transition-colors">
+                The Low-Profile Zen Studio with Ambient Warm Sconces
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 line-clamp-2">
+                Replaced harsh rental tube lights with adhesive magnetic light bars, thrifted bamboo floor mats, and linen curtains hung on tension poles.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#d8c19a]/15">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold text-[11px] border border-[#d8c19a]/30">
+                  NM
+                </div>
+<span class="text-body-sm font-body-sm font-medium text-primary">@nikhil_m</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">favorite</span>
+<span>412 saves</span>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: Bandra Shared Flat / Warm Neutral -->
+<article class="bg-[#252f29] card-border rounded-xl overflow-hidden hover:bg-[#202a24] transition-all duration-300 ambient-shadow group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A warm neutral cozy work-from-home nook in a Mumbai high-rise apartment with a compact oak writing desk, brass architect lamp, magnetic cork inspiration board, and small terrarium. Crisp natural afternoon daylight, minimalist serene workspace aesthetic with soft beige textiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBmpgP_V3QCPcLX9lxyIoGnJZdVhgwMDy95niMUnfu_gZUSrZNBeboEdMprllimnNMfUmWIPTPsj924jyzKIA-IK5MsR0uKru0fm7RH5t5jH0TcVpJarnKmNJGnAWQqWCQDECJCmNbmhVflkn6FbPDuujBBD7w0J7EstDj5bGrogbrEDnRzB34zTVAFUnV3RLH8u8Hbq9d1KhE2-wzkn5983S5iUFvH95q9cMi-_o"/>
+<div class="absolute top-3 left-3 bg-[#111714]/85 backdrop-blur-md px-2.5 py-1 rounded text-label-sm font-label-sm text-primary border border-[#d8c19a]/30 font-semibold">
+              Warm Neutral
+            </div>
+<button aria-label="Save Room" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-[#5f441c] text-primary px-2.5 py-1 rounded text-label-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-[#d8c19a]/40">
+<span>Makeover: ₹4,200</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-[#111714]/85 backdrop-blur-md text-on-surface px-2 py-0.5 rounded text-label-sm font-label-sm border border-[#d8c19a]/30">
+              5 Products
+            </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Bandra West, Mumbai</span>
+<span class="text-secondary font-medium">Rental-Safe</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-semibold leading-snug group-hover:text-secondary transition-colors">
+                60 Sq Ft Balcony Turned Monastic Work Alcove
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 line-clamp-2">
+                Utilized an unused balcony with weather-resistant peel-and-stick wood floor tiles, folding table, and hanging pothos plants.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#d8c19a]/15">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold text-[11px] border border-[#d8c19a]/30">
+                  SK
+                </div>
+<span class="text-body-sm font-body-sm font-medium text-primary">@shreya_k</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">favorite</span>
+<span>894 saves</span>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: Pune PG Room / Modern Indian Minimal -->
+<article class="bg-[#252f29] card-border rounded-xl overflow-hidden hover:bg-[#202a24] transition-all duration-300 ambient-shadow group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A modern Indian minimal PG room transformation in Pune showing a single bed draped in natural khadi cotton throw, a terracotta water pitcher on a small reclaimed wood stool, brass wall sconce, and framed botanical prints. Warm sunny lighting, serene and purposeful aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQm1Q74F3Y28vPcoDsb4UlJQdNvcboP1_BEsXWpNmebSqsNL1n32hIygBXwZbRjHAP_FYd5fMlGjcYXtPYFRW4J4KhuqSAat_OCts4yeCzhesijcdi-Wc_W3d5C-QJqrG0xBDNyeJJLTvpD1WBr4X-dB7ZXoeqdd1VFViQW10H-YR1_zsvsVaMlxC15khyCUcqoHK7HQgCHSaeWAge60lzQEjtq3TJ5kDbqdLJVqI"/>
+<div class="absolute top-3 left-3 bg-[#111714]/85 backdrop-blur-md px-2.5 py-1 rounded text-label-sm font-label-sm text-primary border border-[#d8c19a]/30 font-semibold">
+              Modern Indian
+            </div>
+<button aria-label="Save Room" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/30 flex items-center justify-center text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-[#5f441c] text-primary px-2.5 py-1 rounded text-label-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-[#d8c19a]/40">
+<span>Makeover: ₹2,750</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-[#111714]/85 backdrop-blur-md text-on-surface px-2 py-0.5 rounded text-label-sm font-label-sm border border-[#d8c19a]/30">
+              4 Products
+            </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Viman Nagar, Pune</span>
+<span class="text-secondary font-medium">Under ₹3k</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-semibold leading-snug group-hover:text-secondary transition-colors">
+                Khadi &amp; Terracotta Minimalist Bed Corner
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 line-clamp-2">
+                Local clay pottery sourced from Kumbharwada, paired with unbleached handloom cotton for an earthy, breathable student haven.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#d8c19a]/15">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold text-[11px] border border-[#d8c19a]/30">
+                  VT
+                </div>
+<span class="text-body-sm font-body-sm font-medium text-primary">@varun_t</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">favorite</span>
+<span>319 saves</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- ================= INLINE EDITORIAL INSPIRATION MODULE 1 ================= -->
+<div class="my-8 bg-[#202a24] card-border rounded-xl p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<div class="md:col-span-8 space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">menu_book</span>
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Curated Guide</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            How to make a standard 8x10 PG room feel like a boutique stay for under ₹5,000
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Tired of institutional blue walls and fluorescent overhead glare? Read our step-by-step masterclass on directional lighting, bed layering, and optical floor expansion tailored specifically to shared Indian rental rooms.
+          </p>
+<div class="pt-2 flex items-center gap-4">
+<a class="inline-flex items-center gap-2 text-primary font-semibold text-label-md font-label-md hover:text-secondary transition-colors" href="#">
+<span>Read the 6-step blueprint</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+<span class="text-outline text-label-sm">• 4 min read</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-[#18211c] rounded-lg p-5 card-border space-y-3">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-secondary font-semibold">Essential Takeaways</span>
+<ul class="text-body-sm font-body-sm space-y-2 text-primary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Swap overhead white LED for 2700K floor lamps</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Conceal luggage with floor-length cotton valance</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Use 3M Command interlocking picture ledges</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- MASONRY GRID ROW 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+<!-- CARD 4: Hyderabad Studio / Dark Academia -->
+<article class="bg-[#252f29] card-border rounded-xl overflow-hidden hover:bg-[#202a24] transition-all duration-300 ambient-shadow group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A moody dark academia style study corner in Hyderabad with a deep walnut vintage bookshelf, bronze reading lamp casting circular illumination, stacked classical books, and dark olive drapery. Quiet introspective mood, warm editorial light-mode aesthetics with rich timber tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCziajq2WYrqKGF7sM5g6lr4VjFlbHJNnH7xvES0DDZ3oaZmb3PGREREIytG0Rw71xlBL-O30w3SL2QeVKLLLZ1Azl6TeoKpm1Hydu_leXp5Il6HH0A1l7oets1BXyqGnhAIyWeYF0EISUyVsFynTIzcwut8z4EXey7LpCanLKe0FiObv5r7zmlTetalubzHzj9JRbvl9KpR5r8FTnyQujgerOYIMxhXNnZyOtdOQ"/>
+<div class="absolute top-3 left-3 bg-[#111714]/85 backdrop-blur-md px-2.5 py-1 rounded text-label-sm font-label-sm text-primary border border-[#d8c19a]/30 font-semibold">
+              Dark Academia
+            </div>
+<button aria-label="Save Room" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/30 flex items-center justify-center text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-[#5f441c] text-primary px-2.5 py-1 rounded text-label-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-[#d8c19a]/40">
+<span>Makeover: ₹8,120</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-[#111714]/85 backdrop-blur-md text-on-surface px-2 py-0.5 rounded text-label-sm font-label-sm border border-[#d8c19a]/30">
+              9 Products
+            </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Gachibowli, Hyderabad</span>
+<span class="text-secondary font-medium">Free-Standing</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-semibold leading-snug group-hover:text-secondary transition-colors">
+                The Literary Nook: Rich Walnut &amp; Brass Reading Sanctum
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 line-clamp-2">
+                Created a moody library vibe without painting the landlord's off-white walls using a modular dark wood ladder desk and task lamps.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#d8c19a]/15">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold text-[11px] border border-[#d8c19a]/30">
+                  PR
+                </div>
+<span class="text-body-sm font-body-sm font-medium text-primary">@pranav_reads</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">favorite</span>
+<span>540 saves</span>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 5: Chennai Coastal / Minimal Boho -->
+<article class="bg-[#252f29] card-border rounded-xl overflow-hidden hover:bg-[#202a24] transition-all duration-300 ambient-shadow group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A coastal minimalist studio apartment in Besant Nagar Chennai featuring rattan blinds filtering sea breeze, cane armchairs, a low credenza with monstera leaves in a clear glass bottle, and crisp white textured cotton rugs. Airy breezy lighting, understated tactile styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdUfaN0dZWHisSb6nFQma8Dt2F0bB2BM_oDuEfDzCtJXxzn8K-y6bdB-8XNumFzfLIzx1Lbs3UaGVS_W_FxdVC7OEIQz2sIMXS6mFDeJbUl3oCPbzpEQY4TA0CC009W5KUbDf3us1pE26jdzDIP5g6nvWjPWeEmwC5Wmx9-jyA6j4Ty7025IzdbDZSWpLSLuteS8x6moOc2XZS0DdK-SJ1PRQ9bcBcHrtN4z14xY8"/>
+<div class="absolute top-3 left-3 bg-[#111714]/85 backdrop-blur-md px-2.5 py-1 rounded text-label-sm font-label-sm text-primary border border-[#d8c19a]/30 font-semibold">
+              Cozy Boho
+            </div>
+<button aria-label="Save Room" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/30 flex items-center justify-center text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-[#5f441c] text-primary px-2.5 py-1 rounded text-label-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-[#d8c19a]/40">
+<span>Makeover: ₹5,300</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-[#111714]/85 backdrop-blur-md text-on-surface px-2 py-0.5 rounded text-label-sm font-label-sm border border-[#d8c19a]/30">
+              6 Products
+            </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Besant Nagar, Chennai</span>
+<span class="text-secondary font-medium">Breeze-Optimized</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-semibold leading-snug group-hover:text-secondary transition-colors">
+                Coastal Rattan Living Studio with Tropical Greenery
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 line-clamp-2">
+                Leveraging natural cross-ventilation, cane furniture from Triplicane markets, and sun-bleached linen drapery.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#d8c19a]/15">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold text-[11px] border border-[#d8c19a]/30">
+                  AS
+                </div>
+<span class="text-body-sm font-body-sm font-medium text-primary">@ananya_s</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">favorite</span>
+<span>621 saves</span>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 6: Delhi Studio / Korean Layered Minimal -->
+<article class="bg-[#252f29] card-border rounded-xl overflow-hidden hover:bg-[#202a24] transition-all duration-300 ambient-shadow group flex flex-col">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A Korean layered minimal bedroom in South Extension Delhi featuring butter-yellow check gingham bedspread, transparent acrylic side table with small chrome clock, pleated table lamp, and wall postcards secured with washi tape. Gentle diffuse morning sunlight, soft aesthetic publication vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvWn9c-dZRKPc4T553o94wcGls41xyRgbFyIG9u8U5FJG9IOtWRvcpQai8LK3BTM4utKIY82-1Mg4ZnRxj9Jpe53XWX2qRU5JueD1zJ6G3LoHGbRLvynXLmnM7LK3sXKnBmfXMvqstHNnMBXilD0GUddVD0Df692coe6hffRKFIHR4q-4xj6ePVxe-Q4PL6hNtX1wDBUpTdBR5pAtZni4SKF3nEerdeBgt8-iy7XE"/>
+<div class="absolute top-3 left-3 bg-[#111714]/85 backdrop-blur-md px-2.5 py-1 rounded text-label-sm font-label-sm text-primary border border-[#d8c19a]/30 font-semibold">
+              Korean Minimal
+            </div>
+<button aria-label="Save Room" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#111714]/85 backdrop-blur-md border border-[#d8c19a]/30 flex items-center justify-center text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 bg-[#5f441c] text-primary px-2.5 py-1 rounded text-label-sm font-label-sm font-bold flex items-center gap-1 shadow-sm border border-[#d8c19a]/40">
+<span>Makeover: ₹3,150</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-[#111714]/85 backdrop-blur-md text-on-surface px-2 py-0.5 rounded text-label-sm font-label-sm border border-[#d8c19a]/30">
+              7 Products
+            </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Hauz Khas, Delhi</span>
+<span class="text-secondary font-medium">100% No-Drill</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary font-semibold leading-snug group-hover:text-secondary transition-colors">
+                Butter Tonal Bed &amp; Washi Art Gallery
+              </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5 line-clamp-2">
+                Butter-cream textiles, acrylic bedside display, and gentle ambient lighting to create an airy sanctuary in South Delhi.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#d8c19a]/15">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center font-bold text-[11px] border border-[#d8c19a]/30">
+                  DG
+                </div>
+<span class="text-body-sm font-body-sm font-medium text-primary">@divya_g</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">favorite</span>
+<span>743 saves</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- ================= INLINE EDITORIAL INSPIRATION MODULE 2 ================= -->
+<div class="my-8 bg-[#202a24] card-border rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">gavel</span>
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-secondary font-bold">Renters' Rulebook</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            5 DIY tricks landlords never complain about (and get your security deposit refunded)
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            From tension curtain rods that leave zero wall indentations to museum putty for hanging gallery art on damp monsoon plaster.
+          </p>
+</div>
+<button class="shrink-0 bg-[#252f29] hover:bg-[#18211c] text-primary border border-[#d8c19a]/30 px-6 py-3 rounded-lg text-label-md font-label-md font-semibold transition-all">
+          Explore Landlord Guide
+        </button>
+</div>
+</section>
+<!-- ================= PAGINATION & LOAD MORE MODULE ================= -->
+<section class="pt-8 pb-12 flex flex-col items-center justify-center space-y-4">
+<div class="w-64 bg-[#252f29] card-border h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[16%]"></div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+        Showing <span class="font-semibold text-primary">24</span> of <span class="font-semibold text-primary">148</span> achievable transformations
+      </p>
+<button class="bg-[#252f29] hover:bg-[#202a24] text-primary border border-[#d8c19a]/30 px-8 py-3.5 rounded-lg text-label-md font-label-md font-semibold transition-all active:scale-95 flex items-center gap-2 ambient-shadow">
+<span>Load More Transformations</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</section>
+</main>
+<!-- ================= RIGHT QUICK FILTER DRAWER (MODAL OVERLAY) ================= -->
+<aside class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-[#18211c] ghost-border-b md:border-l border-[#d8c19a]/20 ambient-shadow transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col" id="filterDrawer">
+<!-- Drawer Header -->
+<div class="h-20 px-6 flex items-center justify-between ghost-border-b bg-[#141b17]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<h3 class="font-title-md text-title-md text-primary font-semibold">Refine Space Discovery</h3>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors" id="drawerClose">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Body (Scrollable Form Fields) -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Budget Range Slider / Inputs -->
+<div class="space-y-3">
+<label class="block text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Maximum Budget (INR)</label>
+<div class="flex items-center gap-3">
+<input class="w-full h-11 bg-[#202a24] card-border rounded-lg text-body-md font-body-md text-primary px-3 focus:outline-none focus:border-primary-container" type="text" value="₹ 5,000"/>
+<span class="text-outline text-body-sm">to</span>
+<input class="w-full h-11 bg-[#202a24] card-border rounded-lg text-body-md font-body-md text-primary px-3 focus:outline-none focus:border-primary-container" type="text" value="₹ 15,000"/>
+</div>
+</div>
+<!-- City Selection -->
+<div class="space-y-2">
+<label class="block text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Indian Metro / City</label>
+<div class="grid grid-cols-2 gap-2 text-label-sm font-label-sm">
+<label class="flex items-center gap-2 p-2.5 rounded bg-[#202a24] card-border cursor-pointer text-primary hover:bg-[#252f29] transition-colors">
+<input checked="" class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Bangalore</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-[#202a24] card-border cursor-pointer text-primary hover:bg-[#252f29] transition-colors">
+<input checked="" class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Delhi NCR</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-[#202a24] card-border cursor-pointer text-primary hover:bg-[#252f29] transition-colors">
+<input checked="" class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Mumbai</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-[#202a24] card-border cursor-pointer text-primary hover:bg-[#252f29] transition-colors">
+<input class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Pune</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-[#202a24] card-border cursor-pointer text-primary hover:bg-[#252f29] transition-colors">
+<input class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Hyderabad</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-[#202a24] card-border cursor-pointer text-primary hover:bg-[#252f29] transition-colors">
+<input class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Chennai</span>
+</label>
+</div>
+</div>
+<!-- Rental Restrictions Checks -->
+<div class="space-y-2">
+<label class="block text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Security Deposit Safe</label>
+<div class="space-y-2 text-body-sm font-body-sm text-primary">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Zero Wall Drill (Adhesive &amp; Tension Rod Only)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Removable Peel-and-Stick Backing</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span>Portable Furniture (Easy to Move Between Flats)</span>
+</label>
+</div>
+</div>
+<!-- Creator Verification -->
+<div class="p-4 bg-[#202a24] rounded-lg card-border space-y-2">
+<div class="flex items-center justify-between">
+<span class="text-body-sm font-body-sm font-semibold text-primary">Verified Recreations Only</span>
+<input class="rounded bg-[#18211c] border-[#d8c19a]/40 text-primary-container focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant text-[12px]">
+          Only display rooms where at least 3 community members have successfully replicated the build.
+        </p>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-6 ghost-border-t bg-[#141b17] flex items-center gap-3">
+<button class="w-1/3 h-11 bg-[#202a24] card-border rounded-lg text-label-md font-label-md text-primary font-semibold hover:bg-[#252f29] transition-colors">
+        Clear
+      </button>
+<button class="w-2/3 h-11 bg-primary-container text-on-primary font-semibold rounded-lg text-label-md font-label-md hover:bg-primary transition-all active:scale-95 shadow-sm" id="applyFiltersBtn">
+        Apply (148 Results)
+      </button>
+</div>
+</aside>
+<!-- ================= FOOTER (SHARED COMPONENT) ================= -->
+<footer class="bg-[#141b17] ghost-border-t">
+<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 ghost-border-b">
+<!-- Brand Narrative & Mission -->
+<div class="md:col-span-4 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="NOOKORA Brand Logo" class="h-9 w-9 object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKNl0kf72Eq-FY3-Zo4wZEdwiFA7Uyita1-3J1F7zzDkw3X6gwxoh0FvMhVWbg91TpN07KW-NzWEu1_tLje-gPEEz58O2jV8jQru0CgmB70N5J4M_KNx2LFejfwC_UT5vOzZ4F_OiZuHvqDoHnhTU-587dnRNsy8O_PErdfvfmi9nZlVrgcRSC__MuGPPvCN4rjedCheA6kfTtiQGcT7KRHlg-Pcq6e_u8APdHeAw"/>
+<span class="font-headline-md text-headline-md tracking-tight font-medium text-primary">NOOKORA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            Make Space Yours. An architectural, renter-first design platform engineering peace, intentional curation, and transparent costs for contemporary Indian rentals.
+          </p>
+<div class="flex items-center space-x-3 pt-2">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline">Supported by Indian Renter Collective</span>
+</div>
+</div>
+<!-- Navigation Columns -->
+<div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-primary uppercase tracking-wider mb-4">Discover</h4>
+<ul class="space-y-2.5 text-body-sm font-body-sm">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Explore</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Budgets</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Hostel Solutions</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">No-Drill Guides</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-primary uppercase tracking-wider mb-4">Community</h4>
+<ul class="space-y-2.5 text-body-sm font-body-sm">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Creators</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Community</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Upload Your Room</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Cost Verification</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-primary uppercase tracking-wider mb-4">Legal &amp; Support</h4>
+<ul class="space-y-2.5 text-body-sm font-body-sm">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Product Sourcing FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-150" href="#">Contact Curators</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Copyright & Bottom Line -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-on-surface-variant gap-4">
+<p>© 2024 NOOKORA. Make Space Yours. All rights reserved.</p>
+<div class="flex items-center space-x-6 text-label-sm font-label-sm text-outline">
+<span>Bangalore</span>
+<span>•</span>
+<span>Mumbai</span>
+<span>•</span>
+<span>Delhi</span>
+<span>•</span>
+<span>Pune</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- ================= INLINE SCRIPT FOR INTERACTIVE DRAWER ================= -->
+<script>
+    const drawer = document.getElementById('filterDrawer');
+    const openBtn = document.getElementById('drawerToggle');
+    const closeBtn = document.getElementById('drawerClose');
+    const applyBtn = document.getElementById('applyFiltersBtn');
+
+    function openDrawer() {
+      drawer.classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      drawer.classList.add('translate-x-full');
+    }
+
+    if(openBtn) openBtn.addEventListener('click', openDrawer);
+    if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if(applyBtn) applyBtn.addEventListener('click', closeDrawer);
+  </script>
+</body></html>

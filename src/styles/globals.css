@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #111714;
+  color: #F2EFE7;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom architectural hairline borders */
+.ghost-border {
+  border: 1px solid rgba(216, 193, 154, 0.14);
+}
+
+.ghost-border-b {
+  border-bottom: 1px solid rgba(216, 193, 154, 0.14);
+}
+
+.ghost-border-t {
+  border-top: 1px solid rgba(216, 193, 154, 0.14);
+}
+
+.ghost-border-l {
+  border-left: 1px solid rgba(216, 193, 154, 0.14);
+}
+
+.ghost-border-r {
+  border-right: 1px solid rgba(216, 193, 154, 0.14);
+}
+
+.card-border {
+  border: 1px solid rgba(216, 193, 154, 0.12);
+}
+
+/* Ambient low-level lighting and shadows */
+.ambient-shadow {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 50px -10px rgba(216, 193, 154, 0.05);
+}
+
+.ambient-glow {
+  box-shadow: 0 0 35px rgba(216, 193, 154, 0.07);
+}
+
+.architectural-shadow {
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8), 0 0 40px -5px rgba(216, 193, 154, 0.04);
+}
+
+/* Custom Nocturne Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111714;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252F29;
+  border-radius: 3px;
+  border: 1px solid rgba(216, 193, 154, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B89565;
+}
